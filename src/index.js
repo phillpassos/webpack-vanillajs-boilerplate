@@ -34,10 +34,13 @@ class NoShadowTemplate extends HTMLElement {
     let text = this.getAttribute('text');
     info.textContent = text;
 
-    let style = document.createElement('style');
-    style.textContent = '.info {color: blue}'
-
-    this.appendChild(style);
+    let color = this.getAttribute('color');
+    if (color){
+      let style = document.createElement('style');
+      style.textContent = `.info {color: ${color}}`
+      this.appendChild(style);
+    }
+    
     this.appendChild(wrapper)
     wrapper.appendChild(info);
   }
