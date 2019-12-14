@@ -1,24 +1,41 @@
 {
   "name": "webpack-vanillajs-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate for vanillajs projects",
-  "main": "index.js",
+  "description": "Boilerplate for vanillajs projects using webpack",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm t && webpack --config ./build/webpack.prod.config.js --progress --hide-modules",
+    "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/phillpassos/webpack-vanillajs-boilerplate.git"
-  },
+  "dependencies": {},
   "keywords": [
     "boilerplate",
     "vanillajs",
     "webpack"
   ],
-  "author": "Phillip M Passos",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/phillpassos/webpack-vanillajs-boilerplate/issues"
-  },
-  "homepage": "https://github.com/phillpassos/webpack-vanillajs-boilerplate#readme"
+  "author": "Phillip Passos",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/runtime": "^7.7.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.3.2",
+    "file-loader": "^5.0.2",
+    "jest": "^24.9.0",
+    "jest-serializer-vue": "^2.0.2",
+    "material-design-icons-iconfont": "^5.0.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2",
+    "babel-jest": "^24.9.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "sass": "^1.23.7"
+  }
 }
