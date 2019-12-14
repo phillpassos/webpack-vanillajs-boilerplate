@@ -4,6 +4,7 @@
   "description": "Boilerplate for vanillajs projects using webpack",
   "main": "dist/index.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "build": "npm t && webpack --config ./build/webpack.prod.config.js --progress --hide-modules",
     "test": "jest"
   },
@@ -21,6 +22,7 @@
     "@babel/preset-env": "^7.7.6",
     "@babel/runtime": "^7.7.6",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.3.2",
     "file-loader": "^5.0.2",
@@ -29,13 +31,13 @@
     "material-design-icons-iconfont": "^5.0.1",
     "mini-css-extract-plugin": "^0.8.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "raw-loader": "^4.0.0",
+    "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
-    "webpack-merge": "^4.2.2",
-    "babel-jest": "^24.9.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "sass": "^1.23.7"
+    "webpack-merge": "^4.2.2"
   }
 }
