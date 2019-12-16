@@ -69,3 +69,36 @@ class ExternalHtmlShadowTemplate extends HTMLElement {
 }
 
 customElements.define('external-html-shadow-template', ExternalHtmlShadowTemplate);
+
+
+
+
+
+
+class ShadowTemplateWithEvents extends HTMLElement {
+
+  constructor() {
+    super();
+
+    let shadow = this.attachShadow({mode: 'closed'});
+
+    let wrapper = document.createElement('div');
+    wrapper.setAttribute('class','wrapper');
+
+    let btn = document.createElement('button');
+    btn.setAttribute('class','btn');
+
+    let text = this.getAttribute('text');
+    btn.textContent = text;
+    
+    btn.addEventListener("click", ()=>{
+      let event = new CustomEvent('shadow-template-w-events.click', {detail: Math.random()*50});
+      this.dispatchEvent(event);
+    });
+
+    shadow.appendChild(wrapper);
+    
+    wrapper.appendChild(btn);
+  }
+}
+customElements.define('shadow-template-w-events', ShadowTemplateWithEvents);

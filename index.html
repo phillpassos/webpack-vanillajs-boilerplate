@@ -7,24 +7,39 @@
 </head>
 <body>
     <no-shadow-template
-        text="Este texto valida a passagem de parametros para o componente"
+        text="Este texto deveria ser azul"
         color="blue">
     </no-shadow-template>
 
     <shadow-template
-        text="Este texto valida a passagem de parametros para o componente">
+        text="Este texto utiliza o shadow DOM">
     </shadow-template>
 
     <external-html-shadow-template
-        text="Este texto valida a passagem de parametros para o componente"
+        text="Este texto utilizao shadow dom com um template em html"
         color="blue">
     </external-html-shadow-template>
 
     <no-shadow-template
-        text="Este texto valida a passagem de parametros para o componente"
+        text="Este texto deve ser magenta. Não usa o shadow DOM"
         color="magenta">
     </no-shadow-template>
+
+    <shadow-template-w-events 
+        id="shadow-template-w-events" 
+        text="CLICA AQUI">
+    </shadow-template-w-events>
+
+    <span id="saida-shadow-template-w-events"></span>
     
   <script src="./dist/index.js"></script>
+  <script>
+      let btn = document.getElementById("shadow-template-w-events");
+      btn.addEventListener("shadow-template-w-events.click", (e)=>{
+        console.log(e.detail);
+        document.getElementById("saida-shadow-template-w-events").innerText = e.detail
+      });
+
+  </script>
 </body>
 </html>
